@@ -8,5 +8,5 @@ module.exports = function (app) {
   app.route("/data1").get(medical_controller.getDistance);
   app.route("/datanow").get(medical_controller.getRealTime);
   app.route("/usermanage").get(medical_controller.Manage);
-  app.route("/usermanage/:userId").get(medical_controller.FindByUserID);
+  app.route("/usermanage/:iddriver").get(medical_controller.FindByUserID);
 };

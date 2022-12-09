@@ -4,7 +4,7 @@ const database = require("../connectdatabase");
 //const connection = require("../connectdatabase")
 module.exports = {
   getAllData: function (req, res) {
-    var sql = "SELECT * FROM datn.test1";
+    var sql = "SELECT * FROM biqtzwqiihjmw2npadtd.loradata";
     database.query(sql, (err, response) => {
       if (err) {
         console.log("Khong the lay du lieu");
@@ -14,7 +14,7 @@ module.exports = {
     });
   },
   getUser: function (req, res) {
-    var sql = "SELECT * FROM datn.user";
+    var sql = "SELECT * FROM biqtzwqiihjmw2npadtd.user";
     database.query(sql, (err, response) => {
       if (err) {
         console.log("Khong the lay du lieu");
@@ -35,7 +35,7 @@ module.exports = {
     });
   },
   getRealTime: function (req, res) {
-    var sql = `SELECT * FROM datn.test1 order by test1.time desc LIMIT 5`;
+    var sql = `SELECT * FROM biqtzwqiihjmw2npadtd.loradata order by loradata.time desc LIMIT 5`;
     database.query(sql, (err, response) => {
       if (err) {
         console.log("Khong the lay du lieu");
@@ -56,7 +56,7 @@ module.exports = {
     });
   },
   Manage: function (req, res) {
-    var sql = `SELECT * FROM datn.usermanage`;
+    var sql = `SELECT * FROM biqtzwqiihjmw2npadtd.driver`;
     database.query(sql, (err, response) => {
       if (err) {
         console.log("Khong the lay du lieu");
@@ -66,10 +66,10 @@ module.exports = {
     });
   },
   FindByUserID: function (req, res) {
-    const data = req.params.userId;
+    const data = req.params.iddriver;
     console.log(data);
-    var sql = `SELECT * FROM datn.usermanage WHERE usermanage.userId=${data}`;
-    database.query(sql, [data, "userId"], (err, response) => {
+    var sql = `SELECT * FROM biqtzwqiihjmw2npadtd.driver WHERE driver.iddriver=${data}`;
+    database.query(sql, [data, "iddriver"], (err, response) => {
       if (err) {
         console.log("Khong the lay du lieu");
       }
