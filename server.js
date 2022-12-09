@@ -18,6 +18,12 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.json({
+    hello: "hi!",
+  });
+});
+
 module.exports = app;
 
 const port = process.env.PORT || 5000;
