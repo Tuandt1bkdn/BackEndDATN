@@ -29,13 +29,13 @@ module.exports = {
       if (err) {
         console.log("Khong the lay du lieu");
       }
+
       console.log(response);
       res.json(response);
     });
   },
   getRealTime: function (req, res) {
-    var sql =
-      "SELECT *, t.time as realTime, CONVERT(t.time, DATE) as convertedDate, CONVERT(t.time, TIME) as convertedTime FROM datn.test1 as t GROUP BY t.lng ORDER BY t.time DESC LIMIT 1";
+    var sql = `SELECT * FROM datn.test1 order by test1.time desc LIMIT 5`;
     database.query(sql, (err, response) => {
       if (err) {
         console.log("Khong the lay du lieu");
