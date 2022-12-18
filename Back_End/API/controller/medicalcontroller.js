@@ -46,7 +46,7 @@ module.exports = {
   },
 
   Login: function (req, res) {
-    var sql = `SELECT user.userName, user.Password FROM datn.user WHERE idUser`;
+    var sql = `SELECT username,password FROM biqtzwqiihjmw2npadtd.user where iduser`;
     database.query(sql, (err, response) => {
       if (err) {
         console.log("Khong the lay du lieu");
