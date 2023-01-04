@@ -9,4 +9,6 @@ module.exports = function (app) {
   app.route("/datanow").get(medical_controller.getRealTime);
   app.route("/usermanage").get(medical_controller.Manage);
   app.route("/usermanage/:iddriver").get(medical_controller.FindByUserID);
+  app.route("/saveaddress").get(medical_controller.getSaveAddress);
+  app.route("/saveaddress").post(medical_controller.postSaveAddress);
 };

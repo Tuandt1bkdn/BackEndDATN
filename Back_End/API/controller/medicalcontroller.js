@@ -76,4 +76,23 @@ module.exports = {
       res.json(response);
     });
   },
+  getSaveAddress: function (req, res) {
+    var sql = `SELECT * FROM biqtzwqiihjmw2npadtd.saveaddress`;
+    database.query(sql, (err, response) => {
+      if (err) {
+        console.log("Khong the lay du lieu");
+      }
+      console.log(response);
+      res.json(response);
+    });
+  },
+  postSaveAddress: function (req, res) {
+    var saveaddress = req.body;
+    console.log(saveaddress);
+    var sql = `INSERT into biqtzwqiihjmw2npadtd.saveaddress(idcar, time, address) VALUES ("${saveaddress.idcar}","${saveaddress.time}","${saveaddress.address}")`;
+    database.query(sql, (err, response) => {
+      if (err) throw err;
+      res.json(response);
+    });
+  },
 };
