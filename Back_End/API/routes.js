@@ -11,4 +11,5 @@ module.exports = function (app) {
   app.route("/usermanage/:iddriver").get(medical_controller.FindByUserID);
   app.route("/saveaddress").get(medical_controller.getSaveAddress);
   app.route("/saveaddress").post(medical_controller.postSaveAddress);
+  app.route("/saveaddress/:id").delete(medical_controller.deleteSaveAddress);
 };

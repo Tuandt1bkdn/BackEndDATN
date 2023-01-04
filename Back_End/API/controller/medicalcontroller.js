@@ -95,4 +95,12 @@ module.exports = {
       res.json(response);
     });
   },
+  deleteSaveAddress: function (req, res) {
+    var id = req.params.id;
+    var sql = `DELETE FROM biqtzwqiihjmw2npadtd.saveaddress WHERE id="${id}"`;
+    database.query(sql, (err, response) => {
+      if (err) throw err;
+      res.json(response);
+    });
+  },
 };
